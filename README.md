@@ -13,7 +13,7 @@ DISC is an assessment that analyzes your personality based on four traits: Decis
 Descriptive words are grouped into sets of four. Review the words in each set and indicate which word in each set is most like you and least like you.
 
 ### Requirements
-1. Each set of words must have a Most and Least word selected. (grouped words are in [words.json](./words.json))
+1. Each set of words must have a Most and Least word selected. (grouped words are in [words.json](./src/words.json))
 2. Only one word in each group may be Most, and only one may be Least.
 3. POST answers to `/disc/evaluate` (documentation below).
 4. Successful request will return results with a 200 response.

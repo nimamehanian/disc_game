@@ -1,0 +1,82 @@
+{
+  "name": "disc",
+  "version": "0.0.1",
+  "description": "disc",
+  "main": "./src/index.js",
+  "author": "Nima Mehanian",
+  "license": "MIT",
+  "private": true,
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-class-properties",
+      "react-hot-loader/babel"
+    ]
+  },
+  "scripts": {
+    "cp-index": "cp ./src/index.html ./dist",
+    "cp-favicon": "cp ./src/images/favicon.png ./dist",
+    "clean": "rm -rf dist && mkdir dist",
+    "copy": "yarn run cp-index && yarn run cp-favicon && webpack --progress",
+    "build": "yarn run clean && yarn run copy",
+    "start": "yarn run build && webpack-dev-server",
+    "test": "jest",
+    "test:watch": "yarn run test -- --watch",
+    "deploy": "NODE_ENV=production yarn build && firebase deploy"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "16.12.0",
+    "@material-ui/core": "4.9.5",
+    "@material-ui/icons": "4.9.1",
+    "@material-ui/styles": "4.9.0",
+    "connected-react-router": "6.7.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "firebase": "7.10.0",
+    "history": "4.10.1",
+    "lodash": "4.17.15",
+    "prop-types": "15.7.2",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "react-hot-loader": "4.12.19",
+    "react-redux": "7.2.0",
+    "react-router-dom": "5.1.2",
+    "react-spring": "8.0.27",
+    "redux": "4.0.5",
+    "redux-devtools-extension": "2.13.8",
+    "redux-observable": "1.2.0",
+    "rxjs": "6.5.4",
+    "styled-components": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.7",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.8.3",
+    "@babel/preset-env": "7.8.7",
+    "@babel/preset-react": "7.8.3",
+    "@babel/register": "7.8.6",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.0.6",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "file-loader": "5.1.0",
+    "jest": "25.1.0",
+    "url-loader": "3.0.0",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.10.3"
+  }
+}
